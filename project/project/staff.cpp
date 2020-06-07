@@ -82,7 +82,7 @@ void Importstudents()//filename= "student-"
 
         ifstream fcsv;
 
-        string temp = "D:\\filetest\\Student-" + classname + ".csv";
+        string temp = "D:\\project data\\csvfile\\Student-" + classname + ".csv";
         const char* inputfilename = temp.c_str();
 
         fcsv.open(inputfilename);
@@ -122,7 +122,7 @@ void Importstudents()//filename= "student-"
             student[n].type = 2;
             n++;
         }
-        string temp_1 = "D:\\filetest\\Student-" + classname + ".txt";
+        string temp_1 = "D:\\project data\\class data\\Student-" + classname + ".txt";
         const char* filename1 = temp_1.c_str();
         
         saveStudent(student, filename1, n - 1);
@@ -137,7 +137,7 @@ void Importstudents()//filename= "student-"
 void saveStudent(Information* student, string classname, int n)
 {
     fstream f;
-    string temp_1 = "D:\\filetest\\Student-" + classname + ".txt";
+    string temp_1 = "D:\\project data\\class data\\Student-" + classname + ".txt";
     const char* outputfilename = temp_1.c_str();
     f.open(outputfilename, ios::out);
 
@@ -190,14 +190,14 @@ void edit_student()
         getline(cin, classname);
         cout << "   Enter username(ID): ";
         getline(cin, username);
-        string temp_1 = "D:\\filetest\\Student-" + classname + ".txt";
+        string temp_1 = "D:\\project data\\class data\\Student-" + classname + ".txt";
 
         const char* filename = temp_1.c_str();
         load_file(filename, n, student);
 
         const char* filename1 = temp_1.c_str();
         load_file(filename1, n, student);
-        const char * filename2 = "D:\\filetest\\Student.txt";
+        const char * filename2 = "D:\\project data\\person data\\Student.txt";
         load_file(filename2 ,N , Student );
 
         for (int i = 0; i < n; i++)
@@ -361,12 +361,12 @@ void add_student_into_file_student_and_file_class(Information person)
 {
     int n = 0;
     Information* Person;
-    const char* filename_student = "D:\\filetest\\Student.txt";
+    const char* filename_student = "D:\\project data\\person data\\Student.txt";
     load_file(filename_student, n, Person);
     add_a_element_in_file(filename_student, n, Person, person);
     delete[] Person;
 
-    string filename_class = "D:\\filetest\\Student-" + person.Class + ".txt";
+    string filename_class = "D:\\project data\\class data\\Student-" + person.Class + ".txt";
     const char* filename = filename_class.c_str();
     load_file(filename, n, Person);
     add_a_element_in_file(filename, n, Person, person);
@@ -477,12 +477,12 @@ void remove_student_in_file_student_and_file_class(Information person)
 {
     int n = 0;
     Information* Person;
-    const char* filename_student = "D:\\filetest\\Student.txt";
+    const char* filename_student = "D:\\project data\\person data\\Student.txt";
     load_file(filename_student, n, Person);
     remove_a_element_in_file(filename_student, n, Person, person);
     delete[] Person;
 
-    string filename_class = "D:\\filetest\\Student-" + person.Class + ".txt";
+    string filename_class = "D:\\project data\\class data\\Student-" + person.Class + ".txt";
     const char* filename = filename_class.c_str();
 
     load_file(filename, n, Person);
@@ -577,7 +577,7 @@ void loadstudent(Information& person) {
 
     ifstream f;
 
-    const char* filename_student = "D:\\filetest\\Student.txt";
+    const char* filename_student = "D:\\project data\\class data\\Student.txt";
         load_file(filename_student, n, Person);
         for (int i = 0; i < n; i++) {
             if (Person[i].id == person.id) {
@@ -752,7 +752,7 @@ void view_list_of_student() {
             default:
                 break;
             }
-            string filename_class = "Student-" + Class + ".txt";
+            string filename_class = "D:\\project data\\class data\\Student-" + Class + ".txt";
             const char* filename = filename_class.c_str();
             load_file(filename, m, person);
             for (int i = 0; i < m; i++) {
@@ -774,7 +774,7 @@ void view_list_of_student() {
 void loadStudent(Information*& student, string classname, int& n)
 {
     fstream f;
-    string temp_1 = "D:\\filetest\\Student-" + classname + ".txt";
+    string temp_1 = "D:\\project data\\class data\\Student-" + classname + ".txt";
     const char* inputfilename = temp_1.c_str();
     f.open(inputfilename, ios::in);
 
@@ -916,7 +916,7 @@ Date first_lesson(Date startD, int dayofweek)// startD : start day, dayofweek: t
 //Dua thong tin cua khoa hoc vao mang
 void loadCourses(string academic_year, string semester, string classname, course*& Courses, int& numofcourses)
 {
-    string temp = "D:\\filetest\\" + academic_year + "-" + semester + "-" + "schedule" + "-" + classname + ".txt";
+    string temp = "D:\\project data\\schedule\\" + academic_year + "-" + semester + "-" + "schedule" + "-" + classname + ".txt";
     const char* filename = temp.c_str();
     fstream fin;
     fin.open(filename, ios::in);
@@ -961,7 +961,7 @@ void loadCourses(string academic_year, string semester, string classname, course
 //Dua thong tin cua hoc sinh trong 1 khoa hoc vao mang
 void loadStudentOfACourse(string academic_year, string semester, string classname, string courseName, student_in_course *&student, int& numofstudent)
 {
-    string temp = "D:\\filetest\\" + academic_year + "-" + semester + "-" + classname + "-" + courseName + "-Student.txt";
+    string temp = "D:\\project data\\courses\\" + academic_year + "-" + semester + "-" + classname + "-" + courseName + "-Student.txt";
     const char* filename = temp.c_str();
     ifstream fin;
 
@@ -1058,7 +1058,7 @@ void save_int_in_flieout(ofstream & fout , int a )
 
 void saveStudentOfACourse(string academic_year, string semester, string classname, string courseName, student_in_course* student, int numofstudent)
 {
-    string temp = "D:\\filetest\\" + academic_year + "-" + semester + "-" + classname + "-" + courseName + "-Student.txt";
+    string temp = "D:\\project data\\courses\\" + academic_year + "-" + semester + "-" + classname + "-" + courseName + "-Student.txt";
     const char* filename = temp.c_str();
     ofstream fout;
 
@@ -1103,7 +1103,7 @@ void saveStudentOfACourse(string academic_year, string semester, string classnam
 //-Luu thong tin cac khoa hoc trong 1 hoc ky nam hoc
 void saveCourses(string academic_year, string semester, string classname, course* Courses, int numofcourse)
 {
-	string temp = "D:\\filetest\\" + academic_year + "-" + semester + "-" + "schedule" + "-" + classname + ".txt";
+	string temp = "D:\\project data\\schedule\\" + academic_year + "-" + semester + "-" + "schedule" + "-" + classname + ".txt";
 	const char* filename = temp.c_str();
 	ofstream fout;
 	fout.open(filename,ios::out);
@@ -1177,7 +1177,7 @@ void saveStudentOfCourse(string academic_year, string semester, string classname
 	loadStudent(student, classname, numofstudent);
 	for (int i = 0; i < numofcourse; i++)
 	{
-		string filename ="D:\\filetest\\"+ academic_year + "-" + semester + "-" + classname + "-" + Courses[i].name + "-Student.txt";
+		string filename ="D:\\project data\\courses\\"+ academic_year + "-" + semester + "-" + classname + "-" + Courses[i].name + "-Student.txt";
 		saveStudentIntoACourse(student, filename, numofstudent, Courses[i]);
 	}
     delete[]student;
@@ -1195,7 +1195,7 @@ void ImportCourses()
 	getline(cin, classname, '\n');
 	/*cout << "Enter file name:";
 	getline(cin, filename, '\n');*/
-    filename ="D:\\filetest\\"+ classname + "-" + "Schedule.csv";
+    filename ="D:\\project data\\csvfile\\"+ classname + "-" + "Schedule.csv";
 
 	course Courses[100];
 
@@ -1316,7 +1316,7 @@ void Add_Course()
     Information* student = NULL;
     loadStudent(student, classname, numofstudent);
 
-    string filename = "D:\\filetest\\" + academic_year + "-" + semester + "-" + classname + "-" + Courses_2[numofcourses].name + "-Student.txt";
+    string filename = "D:\\project data\\courses\\" + academic_year + "-" + semester + "-" + classname + "-" + Courses_2[numofcourses].name + "-Student.txt";
     saveStudentIntoACourse(student, filename, numofstudent, Courses_2[numofcourses]);
 
     delete[]Courses_1;

@@ -1,8 +1,5 @@
 #include "Manager.h"
-void  first_menu()
-{
-   
-}
+
 int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 {
 	string username;
@@ -13,7 +10,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 	getline(cin , password); 
 
 	int n;
-	fstu.open("D:\\filetest\\Student.txt" , ios :: in); 
+	fstu.open("D:\\project data\\person data\\Student.txt" , ios :: in); 
 	if (!fstu.is_open())
 	{
 		cout << " fail";
@@ -45,7 +42,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 	}
 	fstu.close();
 	delete[] student;
-	flec.open("D:\\filetest\\Lecture.txt",ios::in);
+	flec.open("D:\\project data\\person data\\Lecture.txt",ios::in);
 	flec >> n;
 	Information* lecture = new Information[n];
 	for (int i = 0; i < n; i++)
@@ -70,7 +67,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 	}
 	flec.close();
 	delete[] lecture;
-	fsta.open("D:\\filetest\\Staff.txt" , ios :: in);
+	fsta.open("D:\\project data\\person data\\Staff.txt" , ios :: in);
 	fsta >> n;
 	Information* staff = new Information[n];
 	for (int i = 0; i < n; i++)
@@ -237,7 +234,7 @@ void saveChangePassword(Information person)
 {
     int n = 0 ;
     Information * Student ;
-    string temp = "Student-" + person.Class + ".txt" ;
+    string temp = "D:\\class data\\Student-" + person.Class + ".txt" ;
     const char * filename1 = temp.c_str() ;
     load_file(filename1, n, Student) ;
     for(int i = 0 ; i < n ; i++)
@@ -250,7 +247,7 @@ void saveChangePassword(Information person)
     }
     saveStudent(Student, filename1 ,  n) ;
     delete [] Student ;
-    const char * filename2 = "Student.txt" ;
+    const char * filename2 = "D:\\person data\\Student.txt" ;
     load_file(filename2, n, Student);
     for(int i = 0 ; i < n ; i++)
     {

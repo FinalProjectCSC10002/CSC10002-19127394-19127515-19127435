@@ -19,8 +19,6 @@ int main()
         cout << "log in fail , try again ." << endl ;
         system("pause");
         system("cls");
-        first_menu();
-        cin.ignore();
         type = login(fstu, fsta, flec,person);
     }
     int option_login ;
