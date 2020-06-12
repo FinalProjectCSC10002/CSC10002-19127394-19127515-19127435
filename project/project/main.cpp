@@ -5,7 +5,7 @@ int main()
     int n;
     cout << "0 - Log out" << endl;
     cout << "Press any number - Log in " << endl;
-    cout << " You option :";
+    cout << " Your option :";
     cin >> n;
     if (n == 0)
         return 0;
@@ -26,7 +26,7 @@ int main()
     cout << "2 - View Profile" << endl ;
     cout << "3 - Change password" << endl ;
     cout << "4 - Log out" << endl ;
-    cout << "You option : " ;
+    cout << "Your option : " ;
     cin  >> option_login;
     cin.ignore();
     cout << endl;
@@ -40,7 +40,7 @@ int main()
                     {
                         show_menu_staff();
                         int option_staff ;
-                        cout << "You option : ";
+                        cout << "Your option : ";
                         cin >> option_staff;
                         cin.ignore();
                         cout << endl;
@@ -158,7 +158,7 @@ int main()
                             system("pause");
                             system("cls");
                             show_menu_staff();
-                            cout << "You option : ";
+                            cout << "Your option : ";
                             cin >> option_staff;
                             cin.ignore();
                             cout << endl;
@@ -186,7 +186,7 @@ int main()
                 case 1 :
                     show_menu_lecturer();
                     int option_lecture ; 
-                    cout << "You option : " ; 
+                    cout << "Your option : " ; 
                     cin >> option_lecture;
                     cin.ignore();
                     cout << endl;
@@ -235,7 +235,7 @@ int main()
                         system("pause");
                         system("cls");
                         show_menu_lecturer();
-                        cout << "You option : ";
+                        cout << "Your option : ";
                         cin >> option_lecture;
                         cin.ignore();
                         cout << endl;
@@ -260,7 +260,7 @@ int main()
                 case 1 :
                     show_menu_student();
                     int option_student ; 
-                    cout << "You option : "; 
+                    cout << "Your option : "; 
                     cin >> option_student;
                     cin.ignore();
                     cout << endl;
@@ -315,7 +315,7 @@ int main()
         cout << "2 - View Profile" << endl;
         cout << "3 - Change password" << endl;
         cout << "4 - Log out" << endl;
-        cout << "You option : ";
+        cout << "Your option : ";
         cin >> option_login;
         cin.ignore();
         cout << endl;

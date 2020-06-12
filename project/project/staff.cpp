@@ -10,7 +10,7 @@ void load_file(const char* filename, int& n, Information*& Person)
     }
     if (!fin.is_open())
     {
-        cout << "           Can you not create file " << endl;
+        cout << "           Can not create file " << endl;
         return;
     }
     else {
@@ -39,7 +39,7 @@ void saveStudent(Information* student, const char * filename, int n)
     f.open(filename, ios::out);
     if(!f)
     {
-        cout << "Can you not create file" << endl ;
+        cout << "Can not create file" << endl ;
         return ;
     }
     f << n << endl;
@@ -68,7 +68,7 @@ void Importstudents()//filename= "student-"
     int num1;
     cout << "0 - Return" << endl;
     cout << "1 - Import students" << endl;
-    cout << "You option : ";
+    cout << "Your option : ";
     cin >> num1;
     while (num1 != 0)
     {
@@ -128,7 +128,7 @@ void Importstudents()//filename= "student-"
         saveStudent(student, filename1, n - 1);
         fcsv.close();
 
-        cout << "You option : ";
+        cout << "Your option : ";
         cin >> num1;
     }
 }
@@ -174,7 +174,7 @@ void edit_student()
     int num1;
     cout << "0 - Return" << endl;
     cout << "1 - Edit student " << endl;
-    cout << "Your choice : ";
+    cout << "Your option : ";
     cin >> num1;
     while (num1 != 0)
     {
@@ -208,10 +208,10 @@ void edit_student()
                 int num2;
                 cout << "   Edit student : " << endl;
                 cout << "   0. Return." << endl;
-                cout << "   1. Edit id." << endl;
+                cout << "   1. Edit Id." << endl;
                 cout << "   2. Edit name." << endl;
                 cout << "   3. Edit dob." << endl;
-                cout << "   Your choice: ";
+                cout << "   Your option: ";
                 cin >> num2;
                 while (num2 != 0)
                 {
@@ -244,7 +244,7 @@ void edit_student()
                     default:
                         break;
                     }
-                    cout << "   Your choice:";
+                    cout << "   Your option:";
                     cin >> num2;
                 }
                 break ;
@@ -269,7 +269,7 @@ void edit_student()
             delete[] student;
             delete [] Student ;
         }
-        cout << "Your choice: ";
+        cout << "Your option: ";
         cin >> num1;
     }
 }
@@ -280,7 +280,7 @@ void add_a_element_in_file(const char* filename, int n, Information*& Person, In
     fout.open(filename, ios::out);
     if (!fout.is_open())
     {
-        cout << "           Can you not create file " << endl;
+        cout << "           Can not create file " << endl;
         return;
     }
     else {
@@ -328,7 +328,7 @@ void remove_a_element_in_file(const char* filename, int n, Information*& Person,
     fout.open(filename, ios::out);
     if (!fout.is_open())
     {
-        cout << "           Can you not create file " << endl;
+        cout << "           Can not create file " << endl;
         return;
     }
     else {
@@ -805,7 +805,7 @@ void createSemester()
 	fout.open("semester.txt", ios::app);
 	string academic_year;
 	string semester;
-	cout << "Enter academic_year: ";
+	cout << "Enter academic year: ";
 	getline(cin, academic_year);
 	cin.ignore();
 	getline(cin, semester);
@@ -1364,7 +1364,7 @@ void Edit_a_course()
                 cout << "10 - Edit end hour" << endl;
                 cout << "11 - Edit room" << endl;
 
-                cout << "Your choice: ";
+                cout << "Your option: ";
                 cin >> num;
                 cin.ignore();
 
@@ -1438,7 +1438,7 @@ void Edit_a_course()
                 }
                 default:
                 {
-                    cout << "Your choice inavalid !!";
+                    cout << "Your option inavalid !!";
                     break;
                 }
                 }

@@ -24,7 +24,7 @@ void View_list_students_of_course_lecture(Information lecture)
     }
     if (check == false)
     {
-        cout << " This class is not yours" << endl;
+        cout << " This is not your class" << endl;
         return;
     }
 
@@ -61,7 +61,7 @@ void View_attendance_list_of_course(Information lecture)
     }
     if (check == false)
     {
-        cout << " This class is not yours" << endl;
+        cout << " This is not your class " << endl;
         return;
     }
 
@@ -104,7 +104,7 @@ void Edit_an_attendance(Information lecture)
      }
     if (check == false)
     {
-        cout << " This class is not yours" << endl;
+        cout << " This is not your class " << endl;
         return;
     }
     student_in_course* student = NULL;
@@ -122,7 +122,7 @@ void Edit_an_attendance(Information lecture)
             cout << "Enter attendance list of student(1.attendance, 0.absent) " << student[i].fullname << " : ";
             for (int j = 0; j < 10; j++)
             {
-                cout << "Buoi " << j + 1 << ": ";
+                cout << "Session " << j + 1 << ": ";
                 cin >> student[i].check_in[j];
             }
         }
@@ -154,7 +154,7 @@ void load_score_board(Information lecture)
     }
     if (check == false)
     {
-        cout << " This class is not yours" << endl;
+        cout << " This is not your class " << endl;
         return;
     }
 
@@ -220,7 +220,7 @@ void Edit_grade_of_a_student(Information lecture)
     }
     if (check == false)
     {
-        cout << " This class is not yours";
+        cout << " This is not your class ";
         return;
     }
 
@@ -285,7 +285,7 @@ void View_scoreboard_course_lecture(Information lecture)
     }
     if (check == false)
     {
-        cout << " This class is not yours" << endl;
+        cout << " This is not your class " << endl;
         return;
     }
 

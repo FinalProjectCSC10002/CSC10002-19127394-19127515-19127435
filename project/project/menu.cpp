@@ -4,9 +4,9 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 {
 	string username;
 	string password;
-	cout << "Enter your User name: ";
+	cout << "Enter User name: ";
 	getline(cin , username);
-	cout << "Enter your Password: ";
+	cout << "Enter Password: ";
 	getline(cin , password); 
 
 	int n;
@@ -33,7 +33,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 		getline(fstu , s);
 		if (username == student[i].id && password == student[i].password)
 		{
-			cout << "Xin chao hoc sinh " << student[i].fullname << endl;
+			cout << "Hello student!!! " << student[i].fullname << endl;
 			person = student[i] ;
 			fstu.close();
 			delete [] student ;
@@ -58,7 +58,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 		getline(flec , s);
 		if (username == lecture[i].id && password == lecture[i].password)
 		{
-			cout << "Xin chao Giang vien " << lecture[i].fullname << endl;
+			cout << "Welcome, Lecturer !!" << lecture[i].fullname << endl;
 			person = lecture[i] ;
 			flec.close();
 			delete [] lecture ;
@@ -82,7 +82,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 		getline(fsta , s);
 		if (username == staff[i].id && password == staff[i].password)
 		{
-			cout << "Xin chao Giao vu " << staff[i].fullname << endl;
+			cout << "Welcome, Staff !! " << staff[i].fullname << endl;
 			person = staff[i] ;
 			fsta.close();
 			delete [] staff ;
@@ -95,7 +95,7 @@ int login(fstream& fstu, fstream& fsta, fstream& flec , Information & person)
 }
 void show_menu_lecturer()
 {
-	cout << "MENU LECTURERS" << endl ;
+	cout << "LECTURERS MENU " << endl ;
 	cout << "-1 - Log out." << endl;
     cout << "0 - View list of courses in the current semester."<< endl ;
     cout << "1 - View list of students of a course." << endl ; 
@@ -114,7 +114,7 @@ void show_menu_student()
     cout << "3 - View his/her scores of a course." << endl ;
 }
 void show_menu_staff() {
-	cout << "MENU STAFF" << endl ;
+	cout << "STAFF MENU " << endl ;
 	cout << "-1 - Log out." << endl;
 	cout << "0 - Import students of a class. " << endl;
 	cout << "1 - Add a new student to a class. " << endl;
@@ -140,34 +140,34 @@ void show_menu_staff() {
 }
 void showInfo_staff(Information person) 
 {
-	cout << "Thong tin cua ban: " << endl;
-	cout << "Ho va ten" <<  person.fullname  << endl ;
-	cout << "Gioi tinh: ";
+	cout << "-------------Your Information---------" << endl;
+	cout << "Full name: " <<  person.fullname  << endl ;
+	cout << "Male: ";
 	if (person.male == 0)
-		cout << "Nam" << endl;
+		cout << "Male" << endl;
 	else
-		cout << "Nu" << endl;
-	cout << "Chuc nang cua ban: Giao vu ";
+		cout << "Female" << endl;
+	cout << "Your role: Staff.";
 }
 void showInfo_lecturer(Information person)
 {
-	cout << "Thong tin cua ban: " << endl;
-	cout << "Ho va ten" <<  person.fullname  << endl ;
-	cout << "Gioi tinh: ";
+	cout << "-------------Your Information---------" << endl;
+	cout << "Full name: " <<  person.fullname  << endl ;
+	cout << "Male: ";
 	if (person.male == 0)
-		cout << "Nam" << endl;
+		cout << "Male" << endl;
 	else
-		cout << "Nu" << endl;
-	cout << "Chuc nang cua ban: Giang vien " << endl ;
-	cout << "Trinh do: " << person.degree << endl ;
+		cout << "Female" << endl;
+	cout << "Your role: Lecturer." << endl ;
+	cout << "Standard: " << person.degree << endl ;
 }
 void showInfo_student(Information person)
 {
-	cout << "Thong tin cua ban: " << endl;
-	cout << "Lop: " << person.Class  << endl ;
+	cout << "-------------Your Information---------" << endl;
+	cout << "Class: " << person.Class  << endl ;
 	cout << "ID: " << person.id << endl ;
-	cout << "Ho va ten" <<  person.fullname  << endl ;
-	cout << "Ngay sinh: " << person.dob.year << "-" ;
+	cout << "Fullname:" <<  person.fullname  << endl ;
+	cout << "Date of Birth: " << person.dob.year << "-" ;
 	if(person.dob.month < 10)
 		cout << "0" << person.dob.month << "-" ;
 	else	
@@ -183,7 +183,7 @@ void check_password(Information &person , string &pass)
 {
         cout << "Enter new password : ";
         cin >> person.password ;
-        cout << "Enter again new password : ";
+        cout << "Retype your new password : ";
         cin >> pass ;
         if(pass == person.password)
         {
@@ -192,7 +192,7 @@ void check_password(Information &person , string &pass)
         }
         else
         {
-            cout << "Enter new password failly , Enter again" << endl ;
+            cout << "Enter new password failed , Please enter again" << endl ;
             return check_password(person , pass);
         }
 }
@@ -208,26 +208,17 @@ void change_password(Information &person)
 
 		while (pass != person.password)
 		{
-			cout << "password not match  " << endl;
+			cout << "Password not match  " << endl;
 			cout << "Enter old password : ";
 			cin >> pass;
 			if (pass == person.password)
 				check_password(person, pass);
 		}
 
-
-		while (pass != person.password)
-		{
-			cout << "password not match  " << endl;
-			cout << "Enter old password : ";
-			cin >> pass;
-			if (pass == person.password)
-				check_password(person, pass);
-		}
 	}
 	else
 	{
-		cout << "Your password is not invalid !!!" << endl;
+		cout << "Your password invalid !!!" << endl;
 	}
 }
 void saveChangePassword(Information person)
